@@ -1,64 +1,43 @@
 import React from 'react'
 
 
- function leftFunc (index,actionInitial){
-    let leftIdx = 0, initialStage =1;
-   if(actionInitial[index].piece.player === 1){
-    leftIdx = 8;
-   }else{
-    
-   }
+ function RightFunc (index,actionInitial){
+    let rightIdx =0, initialStage =8;
+//    if(actionInitial[index].piece.player === 1){
+//     rightIdx = 7;
+//    }
 
-
-    if(actionInitial[index].id=== 1   ){
-        return ;
-    }else if(actionInitial[index].id=== 9){
-        return ;
-    }else if(actionInitial[index].id=== 17){
-        return ;
-    }else if(actionInitial[index].id=== 25){
-        return ;
-    }else if(actionInitial[index].id=== 33){
-        return ;
-    }else if(actionInitial[index].id=== 41){
-        return ;
-    }else if(actionInitial[index].id=== 49){
-        return ;
-    }else if(actionInitial[index].id=== 57){
-        return ;
+    if(actionInitial[index+7].id===  initialStage || actionInitial[index-7].id === 1+(initialStage * 0) ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*2 || actionInitial[index-7].id === 1 + (initialStage * 1) ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*3 || actionInitial[index-7].id === 1 + (initialStage * 2)  ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*4 || actionInitial[index-7].id === 1 + (initialStage * 3)  ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*5 || actionInitial[index-7].id === 1 + (initialStage * 4)  ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*6 || actionInitial[index-7].id === 1 + (initialStage * 5)  ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*7 || actionInitial[index-7].id === 1 + (initialStage * 6)  ){
+        return false ;
+    }else if(actionInitial[index+7].id=== initialStage*8 || actionInitial[index-7].id === 1 + (initialStage * 7)  ){
+        return false ;
+    }else if(actionInitial[index+7].id > 64 || actionInitial[index-7].id < 0 ){
+        return false;
     }else{
-        if(Object.hasOwn(actionInitial[index + 7].piece.id)  && actionInitial[index+7].piece.player !== actionInitial[index].piece.player ){
-           actionInitial[index+ 7].opponentPiece = true;
-        
-        }
+        return true;
     }
-
-   
 }
 
 function Pawn(index, actionInitial) {
-    if(actionInitial[index].piece.player === 1){
+    if(RightFunc(index, actionInitial)){
+        console.log("pawnChecked" )
+   
+    }else{
+        console.log("pawnNotchecked")
 
     }
-
-
-
-
-
-
-
-
-
-    // if(actionInitial[index + 7].piece.pieceId  ){
-    //     if(actionInitial[index + 7].piece.player !== actionInitial[index].player){
-    //       actionInitial[index + 7 ].opponentPiece = true;
-
-    //     }
-
-    // }
-
-
- 
 }
 
 export default Pawn

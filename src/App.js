@@ -24,7 +24,7 @@ const [blockSelected, setBlockSelected] = useState([]);
   const blocks = useSelector((state ) => state.chess.actionInitial);
   
   const dispatch = useDispatch()
- console.log(blocks, "blocks");
+
 
 
   function chesStart (){
@@ -38,17 +38,12 @@ const [blockSelected, setBlockSelected] = useState([]);
     for( let i =0; i<8; i++){
       for(let j=0; j<8; j++ ){
         id++;
-        console.log(id, "id")
         if((i + j) % 2 === 0){
           bgColor = "white";
         }else{
           bgColor = "black";
         }
-        // if(id <= 32){
-        //   pce = balckBishop;
-        // }else{
-        //   pce=bishop;
-        // }
+     
 
         if(id ===1 ){
           pce= {pieceId: 1,
@@ -251,17 +246,13 @@ const [blockSelected, setBlockSelected] = useState([]);
     if(blocks.length === 0 ){
     dispatch(startGame(tempArr))
     }
-    console.log(blocks)
+   
   }
 
   useEffect(()=>{
    chesStart();
   },[])
 
-  
-  useEffect(()=>{
-   console.log(blocks,"blok")
-   })
 
 
   return (

@@ -1,5 +1,6 @@
 import action_type from "./ActionType"
-// import Pawn from "../PieceAction/Pawn"
+import Pawn from "../PieceAction/Pawn"
+
 
 
 const initialState = {
@@ -19,7 +20,7 @@ switch (action.type){
         let tempAr = [...state.actionInitial];
         tempAr[action.payload].active = true;
         console.log(tempAr[action.payload], "payload action")
-        
+        Pawn(action.payload, tempAr)
         
 
         return {
