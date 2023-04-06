@@ -4,6 +4,13 @@ import action_type from "./ActionType"
        type :  action_type.START ,
        payload : payload
     }
+}
 
 
+
+ export function selectPiece(payload){
+   return {
+      type: action_type.BLOCKSELECTED,
+      payload: payload
+   }
 }

@@ -18,18 +18,40 @@ body{
 
 }
 .white{
-  background-color: white;
+  background-color:  #7fa650;
   height: 100%;
   width: 100%;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+}
+#container{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
 }
 .black{
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  border: 1px solid grey;
+  background-color: rgba(255,255,0,.2);
+  /* height: 100%;
+  width: 100%; */
+  /* border: 1px solid grey; */
 }
-.black > img , .white > img {
+
+#container > img {
   height: 100%;
   width: 100%;
+}
+.spandiv{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* .black > img,.blockActive > img , .white > img {
+   height: 100%;
+  width: 100%; 
+} */
+
+.blockActive{
+  /* height: 100%;
+  width: 100%; */
+  background-color: blueviolet;
 }
