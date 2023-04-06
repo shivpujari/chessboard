@@ -175,12 +175,12 @@ const [blockSelected, setBlockSelected] = useState([]);
         else if (id===58){
           pce= {pieceId: 58,
             img:whiteGhoda,
-            player: 1
+            player: 2
           };
         }else if (id===57){
           pce= {pieceId: 57,
             img:whiteHati,
-            player: 1
+            player: 2
           };
         }
         else if (id ===56){
