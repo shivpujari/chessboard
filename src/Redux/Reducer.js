@@ -22,7 +22,7 @@ switch (action.type){
         console.log(tempAr[action.payload], "payload action")
         Pawn(action.payload, tempAr)
         
-
+        console.log("return route from reduser", tempAr)
         return {
             ...state,actionInitial:[...tempAr]
         }

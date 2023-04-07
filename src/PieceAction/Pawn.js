@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-function RightFunc(index, actionInitial) {
-    let rightIdx = 0, initialStage = 8;
+function RightFunc(index, actionInitial,player) {
+    let initialStage = 8;
    
-    if (actionInitial[index].piece.player === 1) {
+    if (player === 1) {
         console.log("player1")
 
         if (index + 7 > 64 ) {
@@ -42,7 +42,7 @@ function RightFunc(index, actionInitial) {
             return true;
         }
 
-    } else if (actionInitial[index].piece.player === 2) {
+    } else if (player === 2) {
         if (index - 7 < 0) {
             console.log("seconfi")
             return false;
@@ -82,11 +82,11 @@ function RightFunc(index, actionInitial) {
 
 }
 
-function leftFunc(index, actionInitial) {
-    let rightIdx = 0, initialStage = 8;
+function leftFunc(index, actionInitial,player) {
+    let initialStage = 8;
     
    
-    if (actionInitial[index].piece.player === 1) {
+    if (player === 1) {
         if (index + 9 > 64) {
             console.log("leftfirstIF")
             return false; 
@@ -122,7 +122,7 @@ function leftFunc(index, actionInitial) {
         }
 
 
-    } else if (actionInitial[index].piece.player === 2) {
+    } else if (player === 2) {
         console.log("player2")
         if (index - 9 < 0) {
             console.log("leftfirstIF")
@@ -165,17 +165,98 @@ function leftFunc(index, actionInitial) {
 }
 
 function Pawn(index, actionInitial) {
-    if (RightFunc(index, actionInitial)) {
-        console.log("RightpawnChecked")
+    const player = actionInitial[index].piece.player ===1?1:2
+    if (RightFunc(index, actionInitial,player)) {
+        if(player === 1){
+            if (Object.hasOwn(actionInitial[index + 7].piece,"pieceId")) {
+                if(actionInitial[index+7].piece.player !== actionInitial[index].piece.player){
+                    actionInitial[index+7].opponentPiece = true
+                    actionInitial[index+7].routes = true
+
+                }
+                console.log(index+8,"peice exist")
+            }else{
+                console.log(actionInitial[index+7].id,"peice does not exist p1")
+    
+            }
+        }else{
+            if (Object.hasOwn(actionInitial[index - 7].piece,"pieceId")) {
+                if(actionInitial[index-7].piece.player !== actionInitial[index].piece.player){
+                    actionInitial[index-7].opponentPiece = true
+                    actionInitial[index-7].routes = true
+
+                }
+                console.log(index-8,"peice exist")
+            }else{
+                console.log(actionInitial[index-7].id,"peice does not exist p2")
+    
+            }
+        }
+
     } else {
         console.log("RightpawnNotchecked")
     }
 
 
-    if (leftFunc(index, actionInitial)) {
+    if (leftFunc(index, actionInitial,player)) {
+        if(player===1){
+            if (Object.hasOwn(actionInitial[index + 9].piece,"pieceId")) {
+                if(actionInitial[index+9].piece.player !== actionInitial[index].piece.player){
+                    actionInitial[index+9].opponentPiece = true
+                    actionInitial[index+9].routes = true
+
+                }
+                console.log(actionInitial[index+9].id,"peice exist p1")
+            }else{
+                console.log(actionInitial[index+9].id,"peice does not exist p1")
+    
+            }
+        }else{
+            if (Object.hasOwn(actionInitial[index - 9].piece,"pieceId")) {
+                if(actionInitial[index-9].piece.player !== actionInitial[index].piece.player){
+                    actionInitial[index-9].opponentPiece = true
+                    actionInitial[index-9].routes = true
+
+                }
+                console.log(actionInitial[index-9].id,"peice exist p2")
+            }else{
+                console.log(actionInitial[index-9].id,"peice does not exist p2")
+    
+            }
+        }
+        
         console.log("leftPawnCheckrd")
     } else {
         console.log("leftPawnNotCheck")
     }
+//finding forward route
+
+    if(player===1){
+        if(actionInitial[index+8].id<64 && !actionInitial[index+8].piece.player){
+            actionInitial[index+8].routes = true
+
+            console.log(actionInitial[index+8].id,"route clear p1")
+            if(actionInitial[index].id >actionInitial[7].id && actionInitial[index].id <actionInitial[16].id){
+                if(actionInitial[index+16].id<64 && !actionInitial[index+16].piece.player){
+                    actionInitial[index+16].routes = true
+                    console.log(actionInitial[index+16].id,"route2 clear p1")
+                }
+            }
+        }
+
+    }else{
+        if(actionInitial[index-8].id>0 && !actionInitial[index-8].piece.player){
+            actionInitial[index-8].routes = true
+            
+            console.log(actionInitial[index-8].id,"route clear p2")
+            if(actionInitial[index].id >actionInitial[47].id && actionInitial[index].id <actionInitial[56].id){
+                if(actionInitial[index-16].id<64 && !actionInitial[index-16].piece.player){
+                    actionInitial[index-16].routes = true
+                    console.log(actionInitial[index-16].id,"route2 clear p1")
+                }
+            }
+        }
+    }
+    //console.log("return route from pawn action", actionInitial)
 }
 export default Pawn
