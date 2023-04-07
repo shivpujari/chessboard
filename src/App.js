@@ -62,13 +62,15 @@ const [blockSelected, setBlockSelected] = useState([]);
             player: 1
           };
 
-        }else if(id ===4){
+        }
+        else if(id ===4){
           pce = pce= {pieceId: 4,
             img:blackWazir,
             player: 1
           };
 
-        }else if(id ===5){
+        }
+        else if(id ===5){
           pce =pce= {pieceId: 5,
             img:blackKing,
             player: 1
@@ -177,7 +179,8 @@ const [blockSelected, setBlockSelected] = useState([]);
             img:whiteGhoda,
             player: 2
           };
-        }else if (id===57){
+        }
+        else if (id===57){
           pce= {pieceId: 57,
             img:whiteHati,
             player: 2
@@ -228,7 +231,7 @@ const [blockSelected, setBlockSelected] = useState([]);
         else{
           pce="";
         }
-
+       
         let obj ={
           id:id, //for block id
           backColor: bgColor, // block color
@@ -253,11 +256,10 @@ const [blockSelected, setBlockSelected] = useState([]);
    chesStart();
   },[])
 
-
-
   return (
     <div className="App">
-    {blocks.map((data,index)=>  <ChessBlock  dispatch={dispatch}  setBlockSelected={setBlockSelected} blockSelected={blockSelected} data={data} index={index}/>)}
+    {blocks.map((data,index)=>  <ChessBlock  dispatch={dispatch}  setBlockSelected={setBlockSelected} 
+    blockSelected={blockSelected} data={data} index={index}/>)}
 
     </div>
   )

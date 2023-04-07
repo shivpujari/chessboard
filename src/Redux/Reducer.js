@@ -1,5 +1,6 @@
 import action_type from "./ActionType"
 import Pawn from "../PieceAction/Pawn"
+import Hathi from "../PieceAction/Hathi";
 
 
 
@@ -20,7 +21,8 @@ switch (action.type){
         let tempAr = [...state.actionInitial];
         tempAr[action.payload].active = true;
         console.log(tempAr[action.payload], "payload action")
-        Pawn(action.payload, tempAr)
+        // Pawn(action.payload, tempAr)
+        Hathi(action.payload, tempAr)
         
         console.log("return route from reduser", tempAr)
         return {
