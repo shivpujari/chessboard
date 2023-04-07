@@ -231,7 +231,7 @@ const [blockSelected, setBlockSelected] = useState([]);
         else{
           pce="";
         }
-       
+        
         let obj ={
           id:id, //for block id
           backColor: bgColor, // block color
