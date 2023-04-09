@@ -231,7 +231,24 @@ const [blockSelected, setBlockSelected] = useState([]);
         else{
           pce="";
         }
-        
+        if (id===36){
+          pce= {pieceId: 65,
+            img:whiteGhoda,
+            player: 2
+          };
+        }
+        // if (id ===39){
+        //   pce={pieceId : 66,
+        //     img: whitePawn,
+        //     player:2
+        //   }
+        // }
+        if(id ===33){
+          pce = pce= {pieceId: 67,
+            img:blckHAti,
+            player: 1
+          };
+        } 
         let obj ={
           id:id, //for block id
           backColor: bgColor, // block color
