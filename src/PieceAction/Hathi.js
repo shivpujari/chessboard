@@ -5,6 +5,9 @@ const Hathi = (index,actionInitial) => {
     let templeftindex = index
     while(!leftArr.includes(templeftindex) ){
         templeftindex--;
+        if(templeftindex < 0){
+            break;
+        }
         if(!actionInitial[templeftindex].piece){
             actionInitial[templeftindex].routes = true;
             // console.log('actionInitial[templeftindex].piece.left',actionInitial[templeftindex].id)
@@ -24,17 +27,22 @@ const Hathi = (index,actionInitial) => {
     let tempRightIndex = index
     while(!rightArr.includes(tempRightIndex) ){
         tempRightIndex++;
+        if(tempRightIndex > 63){
+            break;
+        }
+        console.log("hathi tempRightIndex check..")
         if(!actionInitial[tempRightIndex].piece){
+            console.log("hathi tempRightIndex inside if check..")
             actionInitial[tempRightIndex].routes = true;
-            // console.log('actionInitial[tempRightIndex].piece rightside',actionInitial[tempRightIndex].id)
+            console.log('actionInitial[tempRightIndex].piece rightside',actionInitial[tempRightIndex].id)
         }else{
             if(actionInitial[tempRightIndex].piece.player !== actionInitial[index].piece.player){
             actionInitial[tempRightIndex].routes = true;
             actionInitial[tempRightIndex].opponentPiece = true;
-            // console.log('opponent piece right side')
+            console.log('opponent piece right side')
             break;
             }else{
-            // console.log('same piece right side')
+            console.log('same piece right side')
                 break;
             }
         }

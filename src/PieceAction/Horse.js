@@ -8,14 +8,14 @@ const Horse = (index, actionInitial) => {
         if (!rightArr.includes(tempTopLeftIndex)) {
             if (!actionInitial[tempTopLeftIndex].piece) {
                 actionInitial[tempTopLeftIndex].routes = true;
-                // console.log('actionInitial[tempTopLeftIndex].piece topleft', actionInitial[tempTopLeftIndex].id)
+                console.log('actionInitial[tempTopLeftIndex].piece topleft', actionInitial[tempTopLeftIndex].id)
             } else {
                 if (actionInitial[tempTopLeftIndex].piece.player !== actionInitial[index].piece.player) {
                     actionInitial[tempTopLeftIndex].routes = true;
                     actionInitial[tempTopLeftIndex].opponentPiece = true;
-                    // console.log('opponent piece topleft side')
+                    console.log('opponent piece topleft side')
                 } else {
-                    // console.log('same piece topleft side')
+                    console.log('same piece topleft side')
                 }
             }
         }
@@ -30,18 +30,18 @@ const Horse = (index, actionInitial) => {
         if (!leftArr.includes(tempTopRightIndex)) {
             if (!actionInitial[tempTopRightIndex].piece) {
                 actionInitial[tempTopRightIndex].routes = true;
-                // console.log('actionInitial[tempTopRightIndex].piece topright', actionInitial[tempTopRightIndex].id)
+                console.log('actionInitial[tempTopRightIndex].piece topright', actionInitial[tempTopRightIndex].id)
             } else {
                 if (actionInitial[tempTopRightIndex].piece.player !== actionInitial[index].piece.player) {
                     actionInitial[tempTopRightIndex].routes = true;
                     actionInitial[tempTopRightIndex].opponentPiece = true;
-                    // console.log('opponent piece topright side')
+                    console.log('opponent piece topright side')
                 } else {
-                    // console.log('same piece topright side')
+                    console.log('same piece topright side')
                 }
             }
         } else {
-            // console.log('out of right side')
+            console.log('out of right side')
         }
 
     }
@@ -54,18 +54,18 @@ const Horse = (index, actionInitial) => {
         if (!rightArr.includes(tempBottomLeftIndex)) {
             if (!actionInitial[tempBottomLeftIndex].piece) {
                 actionInitial[tempBottomLeftIndex].routes = true;
-                // console.log('actionInitial[tempBottomLeftIndex].piece bottomLeft', actionInitial[tempBottomLeftIndex].id)
+                console.log('actionInitial[tempBottomLeftIndex].piece bottomLeft', actionInitial[tempBottomLeftIndex].id)
             } else {
                 if (actionInitial[tempBottomLeftIndex].piece.player !== actionInitial[index].piece.player) {
                     actionInitial[tempBottomLeftIndex].routes = true;
                     actionInitial[tempBottomLeftIndex].opponentPiece = true;
-                    // console.log('opponent piece bottomLeft side')
+                    console.log('opponent piece bottomLeft side')
                 } else {
-                    // console.log('same piece bottomLeft side')
+                    console.log('same piece bottomLeft side')
                 }
             }
         } else {
-            // console.log('out of bottomLeft side')
+            console.log('out of bottomLeft side')
         }
 
     }
@@ -78,18 +78,18 @@ const Horse = (index, actionInitial) => {
         if (!rightArr.includes(tempBottomRightIndex)) {
             if (!actionInitial[tempBottomRightIndex].piece) {
                 actionInitial[tempBottomRightIndex].routes = true;
-                // console.log('actionInitial[tempBottomRightIndex].piece bottomLeft', actionInitial[tempBottomRightIndex].id)
+                console.log('actionInitial[tempBottomRightIndex].piece bottomLeft', actionInitial[tempBottomRightIndex].id)
             } else {
                 if (actionInitial[tempBottomRightIndex].piece.player !== actionInitial[index].piece.player) {
                     actionInitial[tempBottomRightIndex].routes = true;
                     actionInitial[tempBottomRightIndex].opponentPiece = true;
-                    // console.log('opponent piece bottomLeft side')
+                    console.log('opponent piece bottomLeft side')
                 } else {
-                    // console.log('same piece bottomLeft side')
+                    console.log('same piece bottomLeft side')
                 }
             }
         } else {
-            // console.log('out of bottomLeft side')
+            console.log('out of bottomLeft side')
         }
 
     }

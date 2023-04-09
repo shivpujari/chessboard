@@ -51,93 +51,93 @@ const [blockSelected, setBlockSelected] = useState([]);
             player: 1
           };
         } else if( id===2){
-          pce=pce= {pieceId: 2,
+          pce= {pieceId: 2,
             img:blackGhoda,
             player: 1
           };
 
         }else if(id ===3){
-          pce = pce= {pieceId: 3,
+           pce= {pieceId: 3,
             img:balckBishop,
             player: 1
           };
 
         }
         else if(id ===4){
-          pce = pce= {pieceId: 4,
+          pce= {pieceId: 4,
             img:blackWazir,
             player: 1
           };
 
         }
         else if(id ===5){
-          pce =pce= {pieceId: 5,
+          pce= {pieceId: 5,
             img:blackKing,
             player: 1
           };
         }
         else if(id ===6){
-          pce = pce= {pieceId: 6,
+          pce= {pieceId: 6,
             img:balckBishop,
             player: 1
           };
         }
         else if(id ===7){
-          pce = pce= {pieceId: 7,
+          pce= {pieceId: 7,
             img:blackGhoda,
             player: 1
           };
         }
         else if(id ===8){
-          pce = pce= {pieceId: 8,
+           pce= {pieceId: 8,
             img:blckHAti,
             player: 1
           };
         } 
         else if(id ===9){
-          pce = pce= {pieceId: 9,
+          pce= {pieceId: 9,
             img:blackpawn,
             player: 1
           };
         } 
         
         else if(id ===10){
-          pce = pce= {pieceId: 10,
+           pce= {pieceId: 10,
             img:blackpawn,
             player: 1
           };
         } 
         else if(id ===11){
-          pce = pce= {pieceId: 11,
+           pce= {pieceId: 11,
             img:blackpawn,
             player: 1
           };
         } 
         else if(id ===12){
-          pce = pce= {pieceId: 12,
+          pce= {pieceId: 12,
             img:blackpawn,
             player: 1
           };
         } 
         else if(id ===13){
-          pce = pce= {pieceId: 13,
+           pce= {pieceId: 13,
             img:blackpawn,
             player: 1
           };
         } 
         else if(id ===14){
-          pce = pce= {pieceId: 8,
+          pce= {pieceId: 14,
             img:blackpawn,
             player: 1
           };
         }
         else if(id ===15){
-          pce = pce= {pieceId: 15,
+          pce= {pieceId: 15,
             img:blackpawn,
             player: 1
           };
         } else if(id ===16){
-          pce = pce= {pieceId:16,
+          pce= {pieceId:16,
             img:blackpawn,
             player: 1
           };
@@ -275,7 +275,7 @@ const [blockSelected, setBlockSelected] = useState([]);
 
   return (
     <div className="App">
-    {blocks.map((data,index)=>  <ChessBlock  dispatch={dispatch}  setBlockSelected={setBlockSelected} 
+    {blocks.map((data,index)=>  <ChessBlock key={index} dispatch={dispatch}  setBlockSelected={setBlockSelected} 
     blockSelected={blockSelected} data={data} index={index}/>)}
 
     </div>

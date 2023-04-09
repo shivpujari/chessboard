@@ -1,8 +1,7 @@
 import action_type from "./ActionType"
-import Pawn from "../PieceAction/Pawn"
-import Hathi from "../PieceAction/Hathi";
-import Camel from "../PieceAction/Camel";
-import Horse from "../PieceAction/Horse";
+import CheckPiece from "../PieceAction/CheckPiece";
+
+
 
 
 
@@ -23,10 +22,8 @@ switch (action.type){
         let tempAr = [...state.actionInitial];
         tempAr[action.payload].active = true;
         console.log(tempAr[action.payload], "payload action")
-        // Pawn(action.payload, tempAr)
-        // Hathi(action.payload, tempAr)
-        // Camel(action.payload, tempAr)
-        Horse(action.payload, tempAr)
+        CheckPiece(action.payload, tempAr)
+       
         
         console.log("return route from reduser", tempAr)
         return {
