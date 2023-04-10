@@ -1,7 +1,7 @@
 
 const Camel = (index , actionInitial) => {
     const leftArr = [0,8,24,32,40,48,56]
-    const rightArr = [7,15,23,31,39,47,55]
+    const rightArr = [7,15,23,31,39,47,55,63]
     let tempLeftTopIndex = index
     while(!leftArr.includes(tempLeftTopIndex) ){
         tempLeftTopIndex = tempLeftTopIndex - 9;

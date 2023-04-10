@@ -233,7 +233,7 @@ const [blockSelected, setBlockSelected] = useState([]);
         }
         if (id===36){
           pce= {pieceId: 65,
-            img:whiteGhoda,
+            img:whiteKing,
             player: 2
           };
         }
