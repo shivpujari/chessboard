@@ -1,10 +1,6 @@
 import action_type from "./ActionType"
 import CheckPiece from "../PieceAction/CheckPiece";
 
-
-
-
-
 const initialState = {
     actionInitial : [],
 
@@ -23,7 +19,6 @@ switch (action.type){
         tempAr[action.payload].active = true;
         console.log(tempAr[action.payload], "payload action")
         CheckPiece(action.payload, tempAr)
-       
         
         console.log("return route from reduser", tempAr)
         return {
