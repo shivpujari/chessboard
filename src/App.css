@@ -21,7 +21,6 @@ body{
   background-color:  #7fa650;
   height: 100%;
   width: 100%;
-  /* border: 1px solid grey; */
 }
 #container{
   height: 100%;
@@ -31,9 +30,6 @@ body{
 }
 .black{
   background-color: rgba(255,255,0,.2);
-  /* height: 100%;
-  width: 100%; */
-  /* border: 1px solid grey; */
 }
 
 #container > img {
@@ -45,13 +41,15 @@ body{
   top: 0;
   left: 0;
 }
-/* .black > img,.blockActive > img , .white > img {
-   height: 100%;
-  width: 100%; 
-} */
 
-.blockActive{
-  /* height: 100%;
-  width: 100%; */
-  background-color: blueviolet;
+.route{
+  /* background-color: rgb(84, 180, 53); */
+  background-color: purple;
+
+  border: 1px solid black;
+  
+}
+.opponent{
+background-color: red;
+box-shadow: rgb(161, 90, 90);
 }
