@@ -6,8 +6,8 @@ function ChessBlock({setBlockSelected, dispatch, blockSelected,data,index}) {
   
 
   const pieceSelected =(index)=>{
-    console.log("pieceexist activestatus" , data.active)
-   if(data.piece.id !== "undefined"){
+    console.log("pieceexist activestatus" , data)
+   if(Object.hasOwn(data.piece,"pieceId")){
     console.log("keys")
     dispatch(selectPiece(index))
     setBlockSelected(index);
